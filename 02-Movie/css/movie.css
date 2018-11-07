@@ -1,0 +1,132 @@
+body {
+    margin: 0;
+    background-image: url("../figure/background.png");
+    font-size: 8pt;
+    font-family: Tahoma;
+}
+
+h1 {
+    text-align: center;
+    font-size: 24pt;
+    font-weight: bold;
+    font-family: Tahoma;
+}
+
+dt {
+    font-weight: bold;
+    padding: 0 0 0 10px;
+}
+
+dd {
+    margin: 0 0 1em 0;
+    padding: 0 20px 0 50px;
+}
+
+#banner {
+    background-image: url("../figure/bannerbackground.png");
+    height: 50px;
+    text-align: center;
+}
+
+#overall {
+    margin: 0 auto;
+    border: 4px solid gray;
+    width: 800px;
+    overflow: hidden;
+}
+
+#right {
+    float: right;
+    width: 250px;
+    background-color: #A2B964;
+    font-size: 8pt;
+    font-family: Arial;
+}
+
+#left {
+    float: left;
+    width: 550px;
+}
+
+#rotton {
+    background-image: url("../figure/rottenbackground.png");
+    width: 550px;
+    height: 83px;
+}
+
+#rotton span {
+    position: relative;
+    top: -12px;
+}
+
+#red {
+    font-size: 48pt;
+    color: red;
+    font-weight: bold;
+}
+
+#white {
+    font-size: 8pt;
+    color: white;
+}
+
+#left-comment {
+    display: inline-block;
+    margin-left: 2%;
+    width: 47%;
+}
+
+#right-comment {
+    float: right;
+    margin-right: 2%;
+    width: 47%;
+}
+
+#bottom {
+    float: left;
+    background-color: #A2B964;
+    width: 100%;
+    bottom: 0px;
+}
+
+#bottom p {
+    padding: 5px;
+    margin: 0;
+    text-align: center;
+}
+
+#link {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+.comment {
+    border: 2px solid gray;
+    font-size: 8pt;
+    font-weight: bold;
+    background-color: #E1D697;
+    overflow: hidden;
+    line-height: 1.2em;
+    padding: 8px;
+    clear: left;
+}
+
+.comment img {
+    margin-right: 5px;
+    float: left;
+}
+
+.name {
+    font-style: italic;
+    margin-bottom: 40px;
+}
+
+.name img {
+    margin-right: 5px;
+    float: left;
+}
+
+.normal {
+    font-style: normal;
+}

@@ -1,0 +1,112 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  margin: 30px;
+}
+
+#que {
+  text-align: center;
+}
+
+#states {
+  position: relative;
+  width: 280px;
+  margin: 0 auto;
+}
+
+#start-stop {
+  width: 150px;
+  font-size: 8px;
+}
+
+#time-box {
+  text-align: right;
+  display: inline-block;
+  width: 85px;
+  height: 20px;
+  margin-left: 20px;
+}
+
+#time-box input {
+  margin-left: 5px;
+  width: 35px;
+}
+
+#score-box {
+  text-align: right;
+  display: inline-block;
+  width: 92px;
+  height: 20px;
+  margin-top: 5px;
+  margin-left: 30px;
+}
+
+#score-box input {
+  margin-left: 5px;
+  width: 35px;
+}
+
+#state {
+  font-size: 8px;
+  margin: 8px 0;
+  width: 131px;
+}
+
+input {
+  font-size: 8px;
+}
+
+#start-stop {
+  width: 147px;
+  height: 17px;
+  background: 0;
+  border: 0.1px solid grey;
+  left: 0;
+}
+
+#words p:nth-child(1) {
+  font-weight: bold;
+}
+
+#words {
+  text-align: left;
+  position: relative;
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: sans-serif;
+}
+
+#map {
+  width: 370px;
+  padding: 10px 0;
+  border: 1px solid black;
+  border-left: 0;
+  border-right: 0;
+  margin: 40px auto;
+}
+
+.hole,
+.mole {
+  border: 0.5px solid grey;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  margin: 8px;
+  border-radius: 50%;
+}
+
+.hole {
+  background-color: white;
+}
+
+.mole {
+  background-color: grey;
+}

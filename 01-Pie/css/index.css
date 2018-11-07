@@ -1,0 +1,70 @@
+body {
+    background-image: url("http://static-xiaoguotu.17house.com/000/031/201411251401229450.jpg");
+    height: 100%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+
+h1 {
+    color: #A4A400;
+    background-color: #F0F0F0;
+    font-family: Verdana;
+    text-align: center;
+    font-size: 22pt;
+    text-decoration: underline;
+    font-weight: bold;
+    letter-spacing: 0.2em;
+}
+
+
+h2 {
+    text-align: center;
+    font-size: 40pt;
+    font-family: Futura;
+    color: white;
+}
+
+h2:hover {
+    color: yellow;
+}
+
+
+.img {
+    text-align: center;
+}
+
+a { 
+  position: relative;
+  display: inline-block;
+}
+
+a:hover .img-tip {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.fruit {
+    height: 360px;
+    width: 440px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    position: relative;
+    top: 30px;
+}
+
+
+.fruit:hover {
+    border: 5px solid #777;
+}
+
+.img-tip {
+  position: absolute;
+  bottom: 0;
+  background: #777;
+  color:white;
+  opacity: 0.8;
+  display: none;
+  font-size: 20pt
+}

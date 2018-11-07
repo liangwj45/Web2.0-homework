@@ -1,0 +1,164 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  font-weight: normal;
+  font-size: 32px;
+}
+
+p {
+  text-align: center;
+  font-weight: lighter;
+  font-size: 25px;
+}
+
+#maze {
+  position: relative;
+  width: 500px;
+  height: 300px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+#top-one {
+  width: 150px;
+  height: 50px;
+  border-right: 0;
+  border-bottom: 0;
+}
+
+#top-two {
+  width: 200px;
+  height: 50px;
+  left: 150px;
+  border-left: 0;
+  border-right: 0;
+}
+
+#top-three {
+  width: 150px;
+  height: 50px;
+  left: 350px;
+  border-left: 0;
+  border-bottom: 0;
+}
+
+#mid-one {
+  width: 150px;
+  height: 150px;
+  top: 50px;
+  border-top: 0;
+}
+
+#mid-two {
+  width: 150px;
+  height: 150px;
+  left: 350px;
+  top: 50px;
+  border-top: 0;
+}
+
+#mid-three {
+  width: 100px;
+  height: 150px;
+  left: 200px;
+  top: 100px;
+  border-bottom: 0;
+}
+
+#btm-one {
+  width: 200px;
+  height: 50px;
+  top: 250px;
+  border-right: 0;
+}
+
+#btm-two {
+  width: 100px;
+  height: 50px;
+  left: 200px;
+  top: 250px;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+}
+
+#btm-three {
+  width: 200px;
+  height: 50px;
+  left: 300px;
+  top: 250px;
+  border-left: 0;
+}
+
+#start {
+  width: 42px;
+  height: 42px;
+  top: 204px;
+  border: 0.1px solid black;
+  background-color: #83ff82;
+}
+
+#end {
+  width: 42px;
+  height: 42px;
+  left: 458px;
+  top: 204px;
+  background-color: #8685fe;
+}
+
+.begin-end {
+  position: absolute;
+  border: 0.1px solid black;
+}
+
+#start p,
+#end p {
+  font-size: 30px;
+  margin: 5px;
+}
+
+#words {
+  width: 575px;
+  margin: 0 auto;
+}
+
+#words p {
+  font-size: 17px;
+  text-align: left;
+}
+
+#sample {
+  position: relative;
+  width: 100px;
+  height: 25px;
+  margin: 0 auto;
+  border: 0.1px solid black;
+  background-color: #eeeeee;
+}
+
+.wall {
+  position: absolute;
+  border: 0.1px solid black;
+  background-color: #eeeeee;
+}
+
+.red {
+  position: absolute;
+  border: 0.1px solid black;
+  background-color: #ff0000;
+}
+
+.show {
+  opacity: 1;
+}
+
+.hide {
+  opacity: 0;
+}
