@@ -41,7 +41,7 @@ window.onload = function() {
     }
     let dif = Math.abs((tar_pos % 4) - (blank_rpos % 4));
     if (tar_pos > 15 || tar_pos < 0 || dif == 3) return;
-    console.log(tar_pos + " " + blank_rpos);
+    $(".image-keyboard").hide();
     let id = $(`[pos='${tar_pos}']:last`)[0].id;
     setPosition("#" + id, blank_rpos);
     blank_rpos = tar_pos;
@@ -68,6 +68,7 @@ function buildBlock(par, id) {
       let dif3 = Math.abs((pos % 4) - (blank_lpos % 4));
       if (!begin) return;
       if (dif == 4 || (dif == 1 && dif3 != 3)) {
+        $(".image-mouse").hide();
         setPosition("#" + pic.attr("id"), blank_lpos);
         blank_lpos = pos;
         check(id);
@@ -91,8 +92,6 @@ function start(flag) {
       setPosition("#r-" + i, now[i]);
     }
   }
-  $(".image-keyboard").hide();
-  $(".image-mouse").hide();
 }
 
 function check(e) {
