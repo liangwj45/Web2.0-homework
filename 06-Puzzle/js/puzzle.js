@@ -91,6 +91,8 @@ function start(flag) {
       setPosition("#r-" + i, now[i]);
     }
   }
+  $(".image-keyboard").hide();
+  $(".image-mouse").hide();
 }
 
 function check(e) {
@@ -145,6 +147,8 @@ function addPlayer() {
   if (p2_build) {
     $("#p2").show();
     start(false);
+    $(".image-keyboard").show();
+    $(".image-mouse").show();
     return;
   }
   start(false);
@@ -157,7 +161,7 @@ function addPlayer() {
       .addClass("pic")
       .attr({ id: "r-" + i, pos: i })
       .css({
-        backgroundImage: `url(images/${pic_id}.png`,
+        backgroundImage: `url(images/${pic_id}.png)`,
         backgroundPositionX: ((i % 4) / 3) * 100 + "%",
         backgroundPositionY: (Math.floor(i / 4) / 3) * 100 + "%",
         left: ((i % 4) / 4) * 100 + "%",
@@ -165,7 +169,11 @@ function addPlayer() {
       });
     div.append(pic);
   }
+  let key = $("<div></div>").addClass("image-keyboard");
+  div.append(key);
   $("#right-block").append(div);
+  let mouse = $("<div></div>").addClass("image-mouse");
+  $("#left-block .game-block").append(mouse);
 }
 
 function rationalize(arr) {

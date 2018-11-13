@@ -10,8 +10,26 @@ body {
 h1 {
   text-align: center;
   margin: 60px auto 70px;
-  font-size: 50px;
+  font-size: 80px;
   color: black;
+}
+
+.image-keyboard,
+.image-mouse {
+  position: absolute;
+  left: 85%;
+  top: 85%;
+  width: 70px;
+  height: 70px;
+  background-size: 70px 70px;
+}
+
+.image-keyboard {
+  background-image: url("../images/keyboard.png");
+}
+
+.image-mouse {
+  background-image: url("../images/mouse.png");
 }
 
 #container {
