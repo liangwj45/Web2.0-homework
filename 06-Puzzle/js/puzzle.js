@@ -8,15 +8,6 @@ p2_build = false;
 pic_id = 1;
 
 window.onload = function() {
-  if (window.innerHeight) winHeight = window.innerHeight;
-  else if (document.body && document.body.clientHeight)
-    winHeight = document.body.clientHeight;
-  if (winHeight < 871) {
-    setTimeout(() => {
-      alert("同学你屏幕太小啦，页面的按钮在底下，缩放页面大小方可查看~");
-    }, 200);
-  }
-
   buildBlock("#left-block", "l-");
 
   document.onkeydown = event => {
@@ -43,6 +34,7 @@ window.onload = function() {
     if (tar_pos > 15 || tar_pos < 0 || dif == 3) return;
     $(".image-keyboard").hide();
     let id = $(`[pos='${tar_pos}']:last`)[0].id;
+    event.returnValue = false; // 防止游戏时键盘移动窗口
     setPosition("#" + id, blank_rpos);
     blank_rpos = tar_pos;
     check("r-");
@@ -101,12 +93,6 @@ function check(e) {
   begin = false;
   let id = e == "l-" ? "#left-block" : "#right-block";
   $(id)
-    .animate({ opacity: 0 }, "slow")
-    .animate({ opacity: 1 }, "slow");
-}
-
-function shink() {
-  $("body")
     .animate({ opacity: 0 }, "slow")
     .animate({ opacity: 1 }, "slow");
 }
