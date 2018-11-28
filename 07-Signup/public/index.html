@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Sign up</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.js"></script>
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <header><span id="header-signin">Sign In</span></header>
+    <div id="info-box">
+      <h2>Sign up</h2>
+      <form id="form">
+        <input
+          class="form-item"
+          id="username"
+          name="username"
+          placeholder="Username"
+          value=""
+        />
+        <p id="hins-username"></p>
+        <input class="form-item" id="sid" name="sid" placeholder="Student id" />
+        <p id="hins-sid"></p>
+        <input
+          class="form-item"
+          id="tel"
+          name="tel"
+          placeholder="Telephone number"
+        />
+        <p id="hins-tel"></p>
+        <input
+          class="form-item"
+          id="email"
+          name="email"
+          placeholder="E-mail address"
+        />
+        <p id="hins-email"></p>
+        <div id="bottom">
+          <input type="button" value="Reset" onclick="reset()" />
+          <input type="submit" value="Commit" id="sumit" />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
