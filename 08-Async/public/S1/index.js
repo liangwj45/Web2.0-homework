@@ -1,7 +1,7 @@
 let flag = false;
 let calculating;
 let sum = 0;
-let leave = true;
+let now = 0;
 
 function id(i, sp = true) {
   return `#control-ring li:nth-child(${i})` + (sp ? " span:nth-child(2)" : "");
@@ -21,7 +21,7 @@ function enable(e) {
 
 $(document).ready(function() {
   $("#button").mouseleave(() => {
-    leave = true;
+    now = 0;
     calculating = false;
     flag = false;
     sum = 0;
@@ -51,7 +51,7 @@ $(document).ready(function() {
     $(id(i, false))
       .addClass("enable")
       .click(() => {
-        leave = false;
+        now = i;
         if (calculating || $(id(i)).html() != 0) return;
         $(id(i))
           .html("···")
@@ -64,7 +64,7 @@ $(document).ready(function() {
         fetch("http://localhost:3000/api/random")
           .then(obj => obj.text())
           .then(number => {
-            if (leave) return;
+            if (now != i) return;
             $(id(i)).html(number);
             sum += parseInt(number);
             calculating = false;
