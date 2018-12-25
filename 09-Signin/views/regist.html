@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Sign In</title>
+    <link rel="stylesheet" type="text/css" href="/css/main.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/regist.js"></script>
+  </head>
+
+  <body>
+    <header><span>Sign In</span><a href="/login">Login</a></header>
+    <div class="container">
+      <div class="register">
+        <h2>Register</h2>
+        <div class="info">
+          <input id="txtUsername" placeholder="username" />
+          <p id="errUsername"></p>
+          <input id="txtPassword" placeholder="password" type="password"/>
+          <p id="errPassword"></p>
+          <input id="txtConfirmPassword" placeholder="confirm password" type="password"/>
+          <p id="errConfirmPwd"></p>
+          <input id="txtStudentID" placeholder="student id" />
+          <p id="errStudentID"></p>
+          <input id="txtPhone" placeholder="telephone number" />
+          <p id="errPhone"></p>
+          <input id="txtEmail" placeholder="email address" />
+          <p id="errEmail"></p>
+        </div>
+        <div class="btn">
+          <input type="button" value="Reset" id="btnReset" />
+          <input type="submit" value="Submit" id="btnSubmit"/>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
