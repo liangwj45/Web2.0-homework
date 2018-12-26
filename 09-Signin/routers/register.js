@@ -4,7 +4,7 @@ const users = require("../server/users");
 module.exports = {
   pathname: "/api/register",
   method: "put",
-  handlers: (req, res, next) => {
+  handlers: (req, res) => {
     const query = req.body;
 
     if (!query) {
@@ -43,10 +43,44 @@ module.exports = {
       return;
     }
 
-    users.create({ username, password, stuId, tel, email }, (err, user) => {
-      if (err) return next(err);
-      res.status(200).send({ type: "success" });
-      return res.end("");
-    });
+    let ifConflict = field => {
+      let obj = {};
+      obj[field] = query[field];
+      return new Promise((resolve, reject) => {
+        users.isConflict(obj, (err, user) => {
+          if (err) reject({ err: err });
+          if (user) reject({ field: field });
+          resolve();
+        });
+      });
+    };
+
+    let conflicts = [
+      ifConflict("username"),
+      ifConflict("stuId"),
+      ifConflict("tel"),
+      ifConflict("email")
+    ];
+
+    Promise.all(conflicts)
+      .then(
+        () => {
+          users.create(
+            { username, password, stuId, tel, email },
+            (err, user) => {
+              if (err) res.status(500).send({ msg: err });
+              req.session.userId = user._id;
+              res.status(200).send({ type: "success" });
+            }
+          );
+        },
+        data => {
+          if (data.err) res.status(500).send({ msg: data.err });
+          res.status(409).send({ type: "conflict", field: data.field });
+        }
+      )
+      .catch(err => {
+        res.status(500).send({ msg: err });
+      });
   }
 };

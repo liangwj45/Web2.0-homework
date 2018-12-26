@@ -83,10 +83,9 @@ $(document).ready(() => {
     };
 
     for (let key of Object.keys(query)) {
-      console.log(key);
-      console.log(query[key]);
       if (!regexs[key].test(query[key])) return;
     }
+
     let password = txtPassword.value;
     if (txtConfirmPassword.value != password) return;
     sha256(password).then(encryptedPwd => {
@@ -110,9 +109,7 @@ $(document).ready(() => {
           status = res.status;
           if (status == 200) {
             window.location.href = "/user/profile";
-          } else {
-            return res.json();
-          }
+          } else return res.json();
         })
         .then(data => {
           if (!data) return;

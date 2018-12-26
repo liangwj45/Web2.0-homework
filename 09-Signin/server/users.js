@@ -33,10 +33,18 @@ const usersSchema = new mongoose.Schema({
 });
 
 usersSchema.statics.authenticate = (username, password, callback) => {
-  users.findOne({ username }).exec((err, res) => {
+  users.findOne({ username }).exec((err, user) => {
     if (err) return callback(err);
-    if (!res) return callback(null, undefined);
-    return callback(null, res.password === password ? res : null);
+    if (!user) return callback(null, undefined);
+    callback(null, user.password === password ? user : null);
+  });
+};
+
+usersSchema.statics.isConflict = (data, callback) => {
+  users.find(data, (err, user) => {
+    if (err) return callback(err);
+    if (user != false) return callback(null, user[0]);
+    callback(null, null);
   });
 };
 
